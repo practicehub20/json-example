@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if error %}
+        <table align="center">
+            <tr>
+                <th style="color: red;font-size: 25px;padding: 8px">{{ error }}</th>
+            </tr>
+        </table>
+    {% endif %}
+
+    {% if result %}
+        <table align="center" border="2">
+            <tr>
+                <th colspan="5">State-Wise Medical Colleges</th>
+            </tr>
+
+            <tr>
+                <th>States</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Capacity</th>
+                <th>Hospital Beds</th>
+            </tr>
+
+            {% for foo in result.data.medicalColleges %}
+                <tr>
+                    <th>{{ foo.state }}</th>
+                    <th>{{ foo.name }}</th>
+                    <th>{{ foo.city }}</th>
+                    <th>{{ foo.admissionCapacity }}</th>
+                    <th>{{ foo.hospitalBeds }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

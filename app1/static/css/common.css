@@ -1,0 +1,27 @@
+#one{
+    text-align: center;
+    background-color: #ff139d;
+    color: white;
+    font-size:xx-large;
+    padding: 8px;
+}
+#two{
+    background-color: #ff139d;
+    color: white;
+    text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+    color: darkblue;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}

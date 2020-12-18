@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if error %}
+        <table align="center">
+            <tr>
+                <th style="color: red;font-size: 25px;padding: 8px">{{ error }}</th>
+            </tr>
+        </table>
+    {% endif %}
+    {% if result %}
+        <table align="center" border="2">
+            <tr>
+                <th colspan="3">State-Wise Beds Availability</th>
+            </tr>
+
+            <tr>
+                <th>States</th>
+                <th>Total Hospitals</th>
+                <th>Total Beds</th>
+            </tr>
+
+            {% for foo in result.data.regional %}
+                <tr>
+                    <th>{{ foo.state }}</th>
+                    <th>{{ foo.totalHospitals }}</th>
+                    <th>{{ foo.totalBeds }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}
